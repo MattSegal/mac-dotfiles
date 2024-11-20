@@ -1,0 +1,31 @@
+[user]
+  email = matt.segal@themobian.com
+  name = Matthew Segal
+[alias]
+  ch = checkout
+  c = commit -m
+  cnv = commit --no-verify -m
+  s = status
+  gud = rebase origin/develop -i
+  stomp = push --force-with-lease origin
+  b = branch
+[difftool "meld"]
+  prompt = false
+  cmd = meld "$LOCAL" "$REMOTE"
+[merge]
+  tool = meld
+[mergetool "meld"]
+  cmd = meld "$LOCAL" "$BASE" "$REMOTE" --output "$MERGED"
+[push]
+  default = simple
+
+[core]
+  excludesfile = ~/.gitignore
+  attributesfile = ~/.gitattributes
+  editor = "nano"
+
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
