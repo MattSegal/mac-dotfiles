@@ -17,6 +17,9 @@ export PATH
 # Matt
 . ~/code/dotfiles/matt.sh
 
+# Funcs
+. ~/code/dotfiles/funcs.sh
+
 # Secrets or local stuff
 if [[ -f ~/code/dotfiles/local.secret.sh ]]; then
     . ~/code/dotfiles/local.secret.sh
