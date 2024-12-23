@@ -1,3 +1,7 @@
+# Pyenv (this messes with the PATH so do this before the path configuration)
+export PYENV_ROOT="$HOME/.pyenv"
+eval "$(pyenv init -)"
+
 # Path configuration
 typeset -U path
 path=(
@@ -8,7 +12,6 @@ path=(
     /bin
     /opt/homebrew/bin
     /opt/homebrew/opt/libpq/bin
-    $HOME/.pyenv/bin
     $path
 )
 export PATH
@@ -25,9 +28,6 @@ else
     [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-# Pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
 
 # Docker
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
@@ -42,6 +42,4 @@ export DOCKER_DEFAULT_PLATFORM=linux/amd64
 if [[ -f ~/code/dotfiles/local.secret.sh ]]; then
     . ~/code/dotfiles/local.secret.sh
 fi
-
-
 

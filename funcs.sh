@@ -5,6 +5,10 @@ function reload {
     . ~/.zshrc
 }
 
+function matt {
+    ssh matt@mattpc
+}
+
 function stopdocker {
     RUNNING_CONTAINERS=$(docker ps -q)
     if [[ ! -z "$RUNNING_CONTAINERS" ]]; then
