@@ -5,7 +5,7 @@ function reload {
     . ~/.zshrc
 }
 
-function matt {
+function mattpc {
     ssh matt@mattpc
 }
 
