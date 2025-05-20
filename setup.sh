@@ -1,6 +1,4 @@
-# Pyenv (this messes with the PATH so do this before the path configuration)
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
+# This goes at the end of the .zshrc file
 
 # Path configuration
 typeset -U path
@@ -43,3 +41,6 @@ if [[ -f ~/code/dotfiles/local.secret.sh ]]; then
     . ~/code/dotfiles/local.secret.sh
 fi
 
+# Starship
+export STARSHIP_CONFIG=~/code/dotfiles/starship.toml
+eval "$(starship init zsh)"
