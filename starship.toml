@@ -107,7 +107,8 @@ symbol = ' '
 version_format = 'v${major}.${minor}'
 
 [git_metrics]
-disabled = false
+# Too slow
+disabled = true
 
 [git_branch]
 symbol = " "

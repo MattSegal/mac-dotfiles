@@ -3,13 +3,14 @@
 # Path configuration
 typeset -U path
 path=(
+    /opt/homebrew/bin
+    /opt/homebrew/opt/libpq/bin
+    /opt/homebrew/opt/python@3.13/libexec/bin
     $HOME/bin
     $HOME/.local/bin
     /usr/local/bin
     /usr/bin
     /bin
-    /opt/homebrew/bin
-    /opt/homebrew/opt/libpq/bin
     $path
 )
 export PATH
