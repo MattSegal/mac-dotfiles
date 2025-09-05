@@ -9,6 +9,11 @@ function mattpc {
     ssh matt@mattpc
 }
 
+# view dns traffic
+function dns {
+    sudo tcpdump -i any -n port 53 -l
+}
+
 function stopdocker {
     RUNNING_CONTAINERS=$(docker ps -q)
     if [[ ! -z "$RUNNING_CONTAINERS" ]]; then
@@ -25,26 +30,4 @@ function stopdocker {
     else
         echo "No containers to remove"
     fi
-}
-
-
-function work {
-    # NB. iTerm2 only
-    cd ~/code/analytica
-    osascript <<EOF
-    tell application "iTerm"
-        tell current window
-            set leftSession to current session
-            set rightSession to (split vertically with default profile in leftSession)
-            set topRightSession to rightSession
-            set bottomRightSession to (split horizontally with default profile in rightSession)
-            tell topRightSession
-                write text "cd ~/code/analytica && matt web"
-            end tell
-            tell bottomRightSession
-                write text "cd ~/code/analytica && matt up"
-            end tell
-        end tell
-    end tell
-EOF
 }
